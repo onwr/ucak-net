@@ -5,11 +5,14 @@ import Tarifeler from './pages/Tarifeler'
 import HızTesti from './pages/HızTesti'
 import Hakkimizda from './pages/Hakkimizda'
 import Referanslar from './pages/Referanslar'
+import TarifeDetay from './pages/TarifeDetay'
+
 const App = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/tarifeler" element={<Tarifeler />} />
+      <Route path="/tarife-detay/:id" element={<TarifeDetay />} />
       <Route path="/hiz-testi" element={<HızTesti />} />
       <Route path="/hakkimizda" element={<Hakkimizda />} />
       <Route path="/referanslar" element={<Referanslar />} />

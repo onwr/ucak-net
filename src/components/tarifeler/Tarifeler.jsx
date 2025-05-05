@@ -1,9 +1,11 @@
 import React from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const plans = [
   {
+    id: 1,
     name: 'Uçak24',
     price: '300₺',
     color: '#561a57',
@@ -17,6 +19,7 @@ const plans = [
     ]
   },
   {
+    id: 2,
     name: 'Uçak35',
     price: '350₺',
     color: '#043d5d',
@@ -30,6 +33,7 @@ const plans = [
     ]
   },
   {
+    id: 3,
     name: 'Uçak50',
     price: '400₺',
     color: '#efa90f',
@@ -69,6 +73,7 @@ const TarifelerComponent = () => {
   return (
     <motion.div
       initial="hidden"
+      id='tarifeler'
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
@@ -116,14 +121,16 @@ const TarifelerComponent = () => {
                   <p className="text-xl font-extrabold">{feature}</p>
                 </motion.div>
               ))}
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="mt-5 w-full rounded-md px-4 py-2 text-white font-semibold"
-                style={{ backgroundColor: plan.color }}
-              >
-                Hemen Ara
-              </motion.button>
+              <Link to={`/tarife-detay/${plan.id}`}>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="mt-5 w-full rounded-md px-4 py-2 text-white font-semibold"
+                  style={{ backgroundColor: plan.color }}
+                >
+                  Tarifeye Git
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
         ))}
